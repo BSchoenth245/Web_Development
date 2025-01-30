@@ -1,13 +1,19 @@
+<!-- Brock Schoenthaler
+        January 29, 2025
+        Registration Page
+        html, accessibility, and bootstrap practice -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <!-- Inclusion of bootswatch stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-secondary">
-
+<!-- Creates the top card that contains the "company" name, "logo", and states that it is a user registration page -->
     <div class="d-flex card bg-transparent col-12 col-lg-6 offset-lg-3 align-items-center justify-content-center border border-0">
         <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
         <div class="d-flex justify-content-center">
@@ -17,9 +23,11 @@
         <h4 class="text-center mb-2 text-black mt-2 mb-2">User Registration</h4>
     </div>
 
+    <!-- Creates the "mother card" that contains all the feilds of the form that one needs to fill in -->
     <div class="d-flex justify-content-center align-items-center">
         <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0">
 
+            <!-- Child card that contains only the email and password. Asks for password confirmation, though purely asthetic. -->
             <div class="card-body col-12 pt-0">
                 <div class="card-body pb-2 pt-0">
                     <input class="form-control mb-2" id="txtUsername" type="email" aria-label="email" placeholder="Example@example.com">
@@ -27,6 +35,7 @@
                     <input class="form-control" id="txtPassword2" type =password aria-label="confirm password" placeholder="Confirm Password">
                 </div>
 
+                <!-- Child card that contains the rest of the important information the potential user will need to fill out. -->
                 <div class="card-body pt-2 pb-2">
                     <div class="form-row d-flex align-items-center justify-content-between col-12" style="
                     padding-right: 0px;
@@ -49,7 +58,8 @@
                     margin-right: 0px;
                     margin-left: 0px;
                     ">
-                        <!-- <input class="form-control col-4" id="txtState" aria-label="state" placeholder="State"> -->
+                        <!-- Creates a select menu containing all of the states. Was unsure of a more efficient way to do this -->
+                         <!-- MY own research brought little help, so I hard coded it all. -->
                         <select id="cboLocation" class="form-control col-4" placeholder="Choose Your Location" aria-label="State">
                             <option value="">Choose Your Location</option>
                             <option value="al">Alabama</option>
@@ -109,15 +119,19 @@
                     </div>
                 </div>
 
+                <!-- Registration button -->
                 <button class="btn btn-primary col-12 mt-1 pt-0" type="button" id="btnButton">Register</button>
 
             </div>
         </form>
     </div>
 
+    <!-- inclusion of JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <!-- Gives the decorative button a "function" -->
+     <!-- using JQuery as opposed to vanilla java script -->
     <script>
         $("#btnButton").on('click',function(){
             let strMessage = "This button does nothing!"
