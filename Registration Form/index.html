@@ -14,114 +14,140 @@
 </head>
 <body class="bg-secondary">
 <!-- Creates the top card that contains the "company" name, "logo", and states that it is a user registration page -->
-    <div class="d-flex card bg-transparent col-12 col-lg-6 offset-lg-3 align-items-center justify-content-center border border-0">
-        <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
-        <div class="d-flex justify-content-center">
-            <img src="images/medical-records-svgrepo-com.svg" alt="SwollenHippo Electronic Medical Records logo" style="max-width: 30%;">
-        </div>
+    <div class="d-flex card bg-transparent align-items-center justify-content-center border border-0">
+        <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0" id="frmLogin">
+            <div class="card-body">
+                <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
+                <div class="d-flex justify-content-center">
+                    <img src="images/medical-records-svgrepo-com.svg" alt="SwollenHippo Electronic Medical Records logo" style="max-width: 30%;">
+                </div>
+                <h4 class="text-center mb-2 text-black mt-2 mb-2">User Login</h4>
 
-        <h4 class="text-center mb-2 text-black mt-2 mb-2">User Registration</h4>
-    </div>
-
-    <!-- Creates the "mother card" that contains all the feilds of the form that one needs to fill in -->
-    <div class="d-flex justify-content-center align-items-center">
-        <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0">
-
-            <!-- Child card that contains only the email and password. Asks for password confirmation, though purely asthetic. -->
-            <div class="card-body col-12 pt-0">
-                <div class="card-body pb-2 pt-0">
-                    <input class="form-control mb-2" id="txtUsername" type="email" aria-label="email" placeholder="Example@example.com">
-                    <input class="form-control mb-2" id="txtPassword" type =password aria-label="password" placeholder="Password">
-                    <input class="form-control" id="txtPassword2" type =password aria-label="confirm password" placeholder="Confirm Password">
+                <input class="form-control mb-2" id="txtLogUser" type="email" aria-label="email" placeholder="Example@example.com">
+                <div class="input-group mb-3">
+                    <input class="form-control mb-2" id="txtLogPass" type="password" aria-label="password" placeholder="Password">
+                    <button class="btn btn-primary form-control col-2" type="button" onclick="myFunction()" id="btnLogPassV" fdprocessedid="1z9g">View</button>
                 </div>
 
-                <!-- Child card that contains the rest of the important information the potential user will need to fill out. -->
-                <div class="card-body pt-2 pb-2">
-                    <div class="form-row d-flex align-items-center justify-content-between col-12" style="
-                    padding-right: 0px;
-                    padding-left: 0px;
-                    margin-right: 0px;
-                    margin-left: 0px;
-                    ">
-                        <input class="form-control col-4 mb-2" id="txtFname" aria-label="first name" placeholder="First Name">
-                        <input class="form-control col-3 mb-2" id="txtMname" aria-label="middle name" placeholder="Middle">
-                        <input class="form-control col-4 mb-2" id="txtLname" aria-label="last name" placeholder="Last Name">
+                <button class="btn btn-primary col-12 mt-3" type="button" id="btnLogin">Login</button>
+                <div class="d-flex justify-content-center ">
+                    <button class="btn btn-link btn-lg col-12 col-md-8 col-lg-6 mt-1 pt-0 pb-0 text-info font-weight-bold" type="button" id="btnSwapLogin">Need an acount? Register here!</button>
+                </div>
+            </div>
+        </form>
+
+        <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0" id="frmRegister" style="display:none">
+    
+        
+            <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
+            <div class="d-flex justify-content-center">
+                <img src="images/medical-records-svgrepo-com.svg" alt="SwollenHippo Electronic Medical Records logo" style="max-width: 30%;">
+            </div>
+
+            <h4 class="text-center mb-2 text-black mt-2 mb-2">User Registration</h4>
+    
+
+            <!-- Creates the "mother card" that contains all the feilds of the form that one needs to fill in -->
+            <div class="d-flex justify-content-center align-items-center">
+        
+
+                <!-- Child card that contains only the email and password. Asks for password confirmation, though purely asthetic. -->
+                <div class="card-body col-12 pt-0">
+                    <div class="card-body pb-2 pt-0">
+                        <input class="form-control mb-2" id="txtUsername" type="email" aria-label="email" placeholder="Example@example.com">
+                        <input class="form-control mb-2" id="txtPassword" type =password aria-label="password" placeholder="Password">
+                        <input class="form-control" id="txtPassword2" type =password aria-label="confirm password" placeholder="Confirm Password">
                     </div>
 
-                    <input class="form-control mb-2" id="txtStreet1" aria-label="street address 1" placeholder="Street Address 1">
-                    <input class="form-control mb-2" id="txtStreet2" aria-label="street address 2" placeholder="Street Address 2">
-                    <input class="form-control mb-2" id="txtCity" aria-label="city" placeholder="City">
+                    <!-- Child card that contains the rest of the important information the potential user will need to fill out. -->
+                    <div class="card-body pt-2 pb-2">
+                        <div class="form-row d-flex align-items-center justify-content-between col-12" style="
+                        padding-right: 0px;
+                        padding-left: 0px;
+                        margin-right: 0px;
+                        margin-left: 0px;
+                        ">
+                            <input class="form-control col-4 mb-2" id="txtFname" aria-label="first name" placeholder="First Name">
+                            <input class="form-control col-3 mb-2" id="txtMname" aria-label="middle name" placeholder="Middle">
+                            <input class="form-control col-4 mb-2" id="txtLname" aria-label="last name" placeholder="Last Name">
+                        </div>
 
-                    <div class="form-row d-flex align-items-center justify-content-between col-12" style="
-                    padding-right: 0px;
-                    padding-left: 0px;
-                    margin-right: 0px;
-                    margin-left: 0px;
-                    ">
-                        <!-- Creates a select menu containing all of the states. Was unsure of a more efficient way to do this -->
+                        <input class="form-control mb-2" id="txtStreet1" aria-label="street address 1" placeholder="Street Address 1">
+                        <input class="form-control mb-2" id="txtStreet2" aria-label="street address 2" placeholder="Street Address 2">
+                        <input class="form-control mb-2" id="txtCity" aria-label="city" placeholder="City">
+
+                        <div class="form-row d-flex align-items-center justify-content-between col-12" style="
+                        padding-right: 0px;
+                        padding-left: 0px;
+                        margin-right: 0px;
+                        margin-left: 0px;
+                        ">
+                            <!-- Creates a select menu containing all of the states. Was unsure of a more efficient way to do this -->
                          <!-- MY own research brought little help, so I hard coded it all. -->
-                        <select id="cboLocation" class="form-control col-4" placeholder="Choose Your Location" aria-label="State">
-                            <option value="">Choose Your Location</option>
-                            <option value="al">Alabama</option>
-                            <option value="ak">Alaska</option>
-                            <option value="az">Arizona</option>
-                            <option value="ar">Arkansas</option>
-                            <option value="ca">California</option>
-                            <option value="co">Colorado</option>
-                            <option value="ct">Connecticut</option>
-                            <option value="de">Delaware</option>
-                            <option value="fl">Florida</option>
-                            <option value="ga">Georgia</option>
-                            <option value="hi">Hawaii</option>
-                            <option value="id">Idaho</option>
-                            <option value="il">Illinois</option>
-                            <option value="in">Indiana</option>
-                            <option value="ia">Iowa</option>
-                            <option value="ks">Kansas</option>
-                            <option value="ky">Kentucky</option>
-                            <option value="la">Louisiana</option>
-                            <option value="me">Maine</option>
-                            <option value="md">Maryland</option>
-                            <option value="ma">Massachusetts</option>
-                            <option value="mi">Michigan</option>
-                            <option value="mn">Minnesota</option>
-                            <option value="ms">Mississippi</option>
-                            <option value="mo">Missouri</option>
-                            <option value="mt">Montana</option>
-                            <option value="ne">Nebraska</option>
-                            <option value="nv">Nevada</option>
-                            <option value="nh">New Hampshire</option>
-                            <option value="nj">New Jersey</option>
-                            <option value="nm">New Mexico</option>
-                            <option value="ny">New York</option>
-                            <option value="nc">North Carolina</option>
-                            <option value="nd">North Dakota</option>
-                            <option value="oh">Ohio</option>
-                            <option value="ok">Oklahoma</option>
-                            <option value="or">Oregon</option>
-                            <option value="pa">Pennsylvania</option>
-                            <option value="ri">Rhode Island</option>
-                            <option value="sc">South Carolina</option>
-                            <option value="sd">South Dakota</option>
-                            <option value="tn">Tennessee</option>
-                            <option value="tx">Texas</option>
-                            <option value="ut">Utah</option>
-                            <option value="vt">Vermont</option>
-                            <option value="va">Virginia</option>
-                            <option value="wa">Washington</option>
-                            <option value="wv">West Virginia</option>
-                            <option value="wi">Wisconsin</option>
-                            <option value="wy">Wyoming</option>
-                        </select>
+                            <select id="cboLocation" class="form-control col-4" placeholder="Choose Your Location" aria-label="State">
+                                <option value="">Choose Your Location</option>
+                                <option value="al">Alabama</option>
+                                <option value="ak">Alaska</option>
+                                <option value="az">Arizona</option>
+                                <option value="ar">Arkansas</option>
+                                <option value="ca">California</option>
+                                <option value="co">Colorado</option>
+                                <option value="ct">Connecticut</option>
+                                <option value="de">Delaware</option>
+                                <option value="fl">Florida</option>
+                                <option value="ga">Georgia</option>
+                                <option value="hi">Hawaii</option>
+                                <option value="id">Idaho</option>
+                                <option value="il">Illinois</option>
+                                <option value="in">Indiana</option>
+                                <option value="ia">Iowa</option>
+                                <option value="ks">Kansas</option>
+                                <option value="ky">Kentucky</option>
+                                <option value="la">Louisiana</option>
+                                <option value="me">Maine</option>
+                                <option value="md">Maryland</option>
+                                <option value="ma">Massachusetts</option>
+                                <option value="mi">Michigan</option>
+                                <option value="mn">Minnesota</option>
+                                <option value="ms">Mississippi</option>
+                                <option value="mo">Missouri</option>
+                                <option value="mt">Montana</option>
+                                <option value="ne">Nebraska</option>
+                                <option value="nv">Nevada</option>
+                                <option value="nh">New Hampshire</option>
+                                <option value="nj">New Jersey</option>
+                                <option value="nm">New Mexico</option>
+                                <option value="ny">New York</option>
+                                <option value="nc">North Carolina</option>
+                                <option value="nd">North Dakota</option>
+                                <option value="oh">Ohio</option>
+                                <option value="ok">Oklahoma</option>
+                                <option value="or">Oregon</option>
+                                <option value="pa">Pennsylvania</option>
+                                <option value="ri">Rhode Island</option>
+                                <option value="sc">South Carolina</option>
+                                <option value="sd">South Dakota</option>
+                                <option value="tn">Tennessee</option>
+                                <option value="tx">Texas</option>
+                                <option value="ut">Utah</option>
+                                <option value="vt">Vermont</option>
+                                <option value="va">Virginia</option>
+                                <option value="wa">Washington</option>
+                                <option value="wv">West Virginia</option>
+                                <option value="wi">Wisconsin</option>
+                                <option value="wy">Wyoming</option>
+                            </select>
                         
-                        <input class="form-control col-3" id="txtZIP" aria-label="zip code" placeholder="ZIP Code">
-                        <input class="form-control col-4" id="txtPhone" aria-label="phone number" placeholder="XXX-XXX-XXXX">
+                            <input class="form-control col-3" id="txtZIP" aria-label="zip code" placeholder="ZIP Code">
+                            <input class="form-control col-4" id="txtPhone" aria-label="phone number" placeholder="XXX-XXX-XXXX">
+                        </div>
                     </div>
+
+                    <!-- Registration button -->
+                    <button class="btn btn-primary col-12 mt-1 pt-0" type="button" id="btnRegister">Register</button>
+
                 </div>
-
-                <!-- Registration button -->
-                <button class="btn btn-primary col-12 mt-1 pt-0" type="button" id="btnButton">Register</button>
-
+        
             </div>
         </form>
     </div>
@@ -135,7 +161,44 @@
     <!-- Gives the decorative button a function -->
      <!-- using JQuery as opposed to vanilla java script -->
     <script>
-        $("#btnButton").on('click',function(){
+
+        $("#btnLogin").on('click',function(){
+            const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+
+            let strUsername = document.querySelector('#txtLogUser').value
+            const strPassword = $('#txtLogPass').val()
+            let blnError = false
+            let strMessage = ""
+
+            strUsername = strUsername.toLowerCase()
+
+            if(!regEmail.test(strUsername)){
+                                blnError = true
+                strMessage+='<p class ="mb-0 mt-0">Username Must be an email address</p>'
+            }
+
+            if(strPassword.length < 8){
+                blnError = true
+                strMessage+="<p>Password Cannot Be Blank</p>"
+            }
+
+            if(blnError == true){
+                Swal.fire({
+                    title: "Oh no, you have an error!",
+                    html: strMessage,
+                    icon: "error"
+                })
+            }
+            else{
+                Swal.fire({
+                    title: "Congrats!",
+                    html:  "You're logged in!",
+                    icon: "success"
+                })
+            }
+        })
+
+        $("#btnRegister").on('click',function(){
             // let strMessage = "This button does nothing!"
             // alert(strMessage)
 
@@ -235,6 +298,24 @@
                 })
             }
         })
+
+        function myFunction() {
+            var x = document.getElementById("txtLogPass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+
+        $('#btnSwapLogin').on('click',function(){
+            $('#frmLogin').slideUp(function(){
+                $('#frmRegister').slideDown('slow')
+            })
+
+        })
+
     </script>
 </body>
 </html>
