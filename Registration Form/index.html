@@ -1,5 +1,5 @@
 <!-- Brock Schoenthaler
-        January 29, 2025
+        Start date: January 29, 2025
         Registration Page
         html, accessibility, and bootstrap practice -->
 
@@ -13,54 +13,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-secondary">
-<!-- Creates the top card that contains the "company" name, "logo", and states that it is a user registration page -->
+<!-- Creates "mother card" for the two tabs -->
     <div class="d-flex card bg-transparent align-items-center justify-content-center border border-0">
+        <!-- User Login Form -->
         <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0" id="frmLogin">
             <div class="card-body">
+                <!-- Company Name -->
                 <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
+                <!-- div that includes the picture used as the logo -->
                 <div class="d-flex justify-content-center">
                     <img src="images/medical-records-svgrepo-com.svg" alt="SwollenHippo Electronic Medical Records logo" style="max-width: 30%;">
                 </div>
                 <h4 class="text-center mb-2 text-black mt-2 mb-2">User Login</h4>
-
+                <!-- username/email and password input -->
                 <input class="form-control mb-2" id="txtLogUser" type="email" aria-label="email" placeholder="Example@example.com">
                 <div class="input-group mb-3">
                     <input class="form-control mb-2" id="txtLogPass" type="password" aria-label="password" placeholder="Password">
+                    <!-- Places a button on the end of the password space that reveals the password using "myFunction" -->
                     <button class="btn btn-primary form-control col-2" type="button" onclick="myFunction()" id="btnLogPassV">View</button>
                 </div>
-
+                <!-- Login button -->
                 <button class="btn btn-primary col-12 mt-3" type="button" id="btnLogin">Login</button>
                 <div class="d-flex justify-content-center ">
+                    <!-- button that redirects user to registration page -->
                     <button class="btn btn-link btn-lg col-12 col-md-8 col-lg-6 mt-1 pt-0 pb-0 text-info font-weight-bold" type="button" id="btnSwapLogin">Need an acount? Register here!</button>
                 </div>
             </div>
         </form>
-
+        <!-- User Registration Form -->
         <form class="card col-12 col-md-6 col-lg-5 bg-transparent border border-0" id="frmRegister" style="display:none">
-    
-        
+            <!-- Company name -->
             <h2 class="text-center mb-1 text-black mt-2">SwollenHippo Electronic Medical Records</h2>
             <div class="d-flex justify-content-center">
+                <!-- Image used as company logo -->
                 <img src="images/medical-records-svgrepo-com.svg" alt="SwollenHippo Electronic Medical Records logo" style="max-width: 30%;">
             </div>
-
             <h4 class="text-center mb-2 text-black mt-2 mb-2">User Registration</h4>
-    
-
-            <!-- Creates the "mother card" that contains all the feilds of the form that one needs to fill in -->
             <div class="d-flex justify-content-center align-items-center">
-        
-
-                <!-- Child card that contains only the email and password. Asks for password confirmation, though purely asthetic. -->
                 <div class="card-body col-12 pt-0">
+                    <!-- Div that contains username and password input -->
+                     <!-- Password2 is used later in the input verification -->
                     <div class="card-body pb-2 pt-0">
                         <input class="form-control mb-2" id="txtUsername" type="email" aria-label="email" placeholder="Example@example.com">
-                        <input class="form-control mb-2" id="txtPassword" type =password aria-label="password" placeholder="Password">
+                        <div class="input-group">
+                            <input class="form-control mb-2" id="txtPassword" type =password aria-label="password" placeholder="Password">
+                            <!-- Button on the end of the password input box that reveals both password and password2 -->
+                            <button class="btn btn-primary form-control col-2" type="button" onclick="myFunction2()" id="btnLogPassV3">View</button>
+                        </div>
                         <input class="form-control" id="txtPassword2" type =password aria-label="confirm password" placeholder="Confirm Password">
                     </div>
-
-                    <!-- Child card that contains the rest of the important information the potential user will need to fill out. -->
+                    <!-- Div that contains name information, as well as address information -->
                     <div class="card-body pt-2 pb-2">
+                        <!-- Div contains only name information -->
                         <div class="form-row d-flex align-items-center justify-content-between col-12" style="
                         padding-right: 0px;
                         padding-left: 0px;
@@ -71,11 +75,10 @@
                             <input class="form-control col-3 mb-2" id="txtMname" aria-label="middle name" placeholder="Middle">
                             <input class="form-control col-4 mb-2" id="txtLname" aria-label="last name" placeholder="Last Name">
                         </div>
-
                         <input class="form-control mb-2" id="txtStreet1" aria-label="street address 1" placeholder="Street Address 1">
                         <input class="form-control mb-2" id="txtStreet2" aria-label="street address 2" placeholder="Street Address 2">
                         <input class="form-control mb-2" id="txtCity" aria-label="city" placeholder="City">
-
+                        <!-- Allows users to select their state from a drop down menu -->
                         <div class="form-row d-flex align-items-center justify-content-between col-12" style="
                         padding-right: 0px;
                         padding-left: 0px;
@@ -139,49 +142,49 @@
                             </select>
                         
                             <input class="form-control col-3" id="txtZIP" aria-label="zip code" placeholder="ZIP Code">
-                            <input class="form-control col-4" id="txtPhone" aria-label="phone number" placeholder="XXX-XXX-XXXX">
+                            <input class="form-control col-4" id="txtPhone" aria-label="phone number" placeholder="Phone Number">
                         </div>
                     </div>
-
                     <!-- Registration button -->
                     <button class="btn btn-primary col-12 mt-1 pt-0" type="button" id="btnRegister">Register</button>
-
                 </div>
-        
             </div>
         </form>
     </div>
-
     <!-- inclusion of JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Inclusion of sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <!-- Gives the decorative button a function -->
-     <!-- using JQuery as opposed to vanilla java script -->
+    <!-- using JQuery as opposed to vanilla java script -->
     <script>
-
+        // Function that runs on click of "Login" button
         $("#btnLogin").on('click',function(){
+            // Regular expression for emails
             const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+            // Regular expression for a phone number
+            const regPhone = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/
+            // Regular expression for US Postal Codes
+            const regZIP = /^\d{5}(\-?\d{4})?$/
 
+            // Captures necessary Login data
             let strUsername = document.querySelector('#txtLogUser').value
             const strPassword = $('#txtLogPass').val()
             let blnError = false
             let strMessage = ""
 
             strUsername = strUsername.toLowerCase()
-
+            // Input validation for login
             if(!regEmail.test(strUsername)){
-                                blnError = true
+                blnError = true
                 strMessage+='<p class ="mb-0 mt-0">Username Must be an email address</p>'
             }
-
             if(strPassword.length < 8){
                 blnError = true
                 strMessage+="<p>Password Cannot Be Blank</p>"
             }
-
+            // Error message
             if(blnError == true){
                 Swal.fire({
                     title: "Oh no, you have an error!",
@@ -189,6 +192,7 @@
                     icon: "error"
                 })
             }
+            // Success message
             else{
                 Swal.fire({
                     title: "Congrats!",
@@ -197,11 +201,17 @@
                 })
             }
         })
-
+        // Function that runs on click of "Register" button
         $("#btnRegister").on('click',function(){
-            // let strMessage = "This button does nothing!"
-            // alert(strMessage)
 
+            // Regular expression for emails
+            const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+            // Regular expression for a phone number
+            const regPhone = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/
+            // Regular expression for US Postal Codes
+            const regZIP = /^\d{5}(\-?\d{4})?$/
+
+            // Captures inputs in all data fields on the registration page
             let strUsername = document.querySelector('#txtUsername').value
             const strPassword = $('#txtPassword').val()
             const strPassword2 = $('#txtPassword2').val()
@@ -223,8 +233,8 @@
             strFname = strFname.toLowerCase()
             strMname = strMname.toLowerCase()
             strLname = strLname.toLowerCase()
-            
-            if(strUsername.trim().length < 6 || !strUsername.includes('@') || !strUsername.includes('.')){
+            // Input validation for registration page
+            if(!regEmail.test(strUsername)){
                 blnError = true
                 strMessage+='<p>Username must be an email</p>'
                 intTotErrors += 1
@@ -264,18 +274,18 @@
                 strMessage+='<p>State cannot be blank</p>'
                 intTotErrors += 1
             }
-            if(strZIP.length < 1){
+            if(!regZIP.test(strZIP)){
                 blnError = true
                 strMessage+='<p>Zip Code cannot be blank</p>'
                 intTotErrors += 1
             }
-            if(strPhone.trim().length < 12 || strPhone.trim().length > 12){
+            if(!regPhone.test(strPhone)){
                 blnError = true
                 strMessage+='<p>Phone number does match required format</p>'
                 intTotErrors += 1
             }
 
-            // alert Message
+            // alert Message for if there are mroe than 5 errors
             if(intTotErrors >= 5){
                 Swal.fire({
                     title: "Oh no, you have errors",
@@ -283,6 +293,7 @@
                     icon: "error"
                 })
             }
+            // Input message for if there are less than 5 errors, but at least 1
             else if(intTotErrors < 5 && intTotErrors > 0){
             Swal.fire({
                 title: "Oh no, you have an error!",
@@ -290,15 +301,33 @@
                 icon: "error"
             });
             }
+            // Success message
             else{
                 Swal.fire({
                     title: "Congrats",
                     text: "You are registered!",
                     icon: "success"
                 })
+                // Automatic redirect to login page
+                $('#frmRegister').slideUp(function(){
+                    $('#frmLogin').slideDown('slow')
+                })
+                // Erases all data on reistration page and sets values to be empty strings
+                document.querySelector('#txtUsername').value = ''
+                document.querySelector('#txtPassword').value = ''
+                document.querySelector('#txtPassword2').value = ''
+                document.querySelector('#txtFname').value = ''
+                document.querySelector('#txtMname').value = ''
+                document.querySelector('#txtLname').value = ''
+                document.querySelector('#txtStreet1').value = ''
+                document.querySelector('#txtStreet2').value = ''
+                document.querySelector('#txtCity').value = ''
+                document.querySelector('#cboLocation').value = ''
+                document.querySelector('#txtZIP').value = ''
+                document.querySelector('#txtPhone').value = ''
             }
         })
-
+        // Reveals/hides password on the login page
         function myFunction() {
             var x = document.getElementById("txtLogPass");
             if (x.type === "password") {
@@ -307,15 +336,27 @@
                 x.type = "password";
             }
         }
-
-
+        // Reveals/hides both password fields on the registration page
+        function myFunction2() {
+            var x = document.getElementById("txtPassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            var y = document.getElementById("txtPassword2");
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+        }
+        // Allows users to access registration page from the login page
         $('#btnSwapLogin').on('click',function(){
             $('#frmLogin').slideUp(function(){
                 $('#frmRegister').slideDown('slow')
             })
-
         })
-
     </script>
 </body>
 </html>
