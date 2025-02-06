@@ -9,3 +9,6 @@ Added functionality has been added to the registration form. Input validation wa
 
 2/4/2025
 Added a login page that loads before the registration page, along with a button to navigate to the registration page if an account needs to be created. I also added input validation for the login page, as well as a button I plan to implement into the registration page allowing the user to view their typed password, changing the type of the input between text and password. Need to implement comments, but will in next commit.
+
+2/5/2025
+Added second "view password" button to the registration page, as well as added more regular expressions. Alongside the email regex that was already present, I added one for US postal codes, as well as one for phone numbers. I also fully commented the code so mostly everything, and its function, is labeled.
